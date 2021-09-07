@@ -24,7 +24,7 @@ public class DataHandler {
         } catch (IOException e) {
             System.err.println("File not found");
         }
-    }g
+    }
 
     public static List<Product> readDataFromFile() {
         List<Product> productList = new ArrayList<>();
