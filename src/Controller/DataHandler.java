@@ -15,28 +15,28 @@ public class DataHandler {
 
     public static void writeToFile() {
         try {
-            List<Product> sellOrderList = ProductManagement.getProductList();
+            List<Product> productList = ProductManagement.getProductList();
             FileOutputStream fos = new FileOutputStream(filePath);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(sellOrderList);
+            oos.writeObject(productList);
             oos.close();
             fos.close();
         } catch (IOException e) {
             System.err.println("File not found");
         }
-    }
+    }g
 
     public static List<Product> readDataFromFile() {
-        List<Product> sellOrderList = new ArrayList<>();
+        List<Product> productList = new ArrayList<>();
         try {
             FileInputStream fis = new FileInputStream(filePath);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            sellOrderList = (List<Product>) ois.readObject();
+            productList = (List<Product>) ois.readObject();
             fis.close();
             ois.close();
         } catch (Exception ex) {
             System.err.println("Data is empty");
         }
-        return sellOrderList;
+        return productList;
     }
 }
